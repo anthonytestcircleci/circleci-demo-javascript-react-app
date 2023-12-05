@@ -7,7 +7,7 @@ orbs:
       my_command:
         steps:
           - run: echo "Hello, world!"
-          - run: echo "Pipeline ID $PIPELINE_NUMBER"
+          - run: echo "Repo name: << pipeline.trigger_parameters.github_app.repo_name >>"
 
 jobs:
   build_and_test:
