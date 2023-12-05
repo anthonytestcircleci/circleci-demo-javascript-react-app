@@ -7,7 +7,7 @@ orbs:
       my_command:
         steps:
           - run: echo "Hello, world!"
-          - run: echo $CIRCLE_PROJECT_REPONAME
+          - run: echo $PIPELINE_ID
 
 jobs:
   build_and_test:
@@ -15,6 +15,7 @@ jobs:
       - image: cimg/node:20.10.0
     environment:
       CIRCLE_PROJECT_REPONAME: << pipeline.trigger_parameters.github_app.repo_name >>
+      PIPELINE_ID: << pipeline.id >>
       PIPELINE_NUMBER: << pipeline.number >>
     steps:
       - checkout
