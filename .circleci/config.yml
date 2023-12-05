@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.1.0
+  slack: circleci/slack@4.12.5
   heroku: circleci/heroku@1.2.6
 
 jobs:
@@ -21,6 +22,10 @@ jobs:
           root: ~/project
           paths:
             - .
+      - slack/notify:
+          channel: C069396MYC9
+          event: pass
+          template: basic_success_1
   deploy: # this can be any name you choose
     docker:
       - image: cimg/node:20.10.0
