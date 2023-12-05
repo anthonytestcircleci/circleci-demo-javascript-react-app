@@ -22,7 +22,6 @@ jobs:
           paths:
             - .
       - slack/notify:
-          context: slack-orb
           channel: C069396MYC9
           event: pass
           template: basic_success_1
@@ -31,6 +30,7 @@ workflows:
   on_commit:
     jobs:
       - build_and_test
+          context: slack-orb
 
   nightly:
     triggers:
@@ -42,4 +42,5 @@ workflows:
                 - master
     jobs:
       - build_and_test
+          context: slack-orb
       
