@@ -38,7 +38,7 @@ jobs:
           channel: C069396MYC9
           event: pass
           template: basic_success_1
-      - inline-orb/my_job
+      - inline-orb/my_command
  
 workflows:
   on_commit:
