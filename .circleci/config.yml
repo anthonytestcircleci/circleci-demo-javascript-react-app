@@ -29,7 +29,7 @@ jobs:
 workflows:
   on_commit:
     jobs:
-      - build_and_test
+      - build_and_test:
           context: slack-orb
 
   nightly:
@@ -41,6 +41,6 @@ workflows:
               only:
                 - master
     jobs:
-      - build_and_test
+      - build_and_test:
           context: slack-orb
       
