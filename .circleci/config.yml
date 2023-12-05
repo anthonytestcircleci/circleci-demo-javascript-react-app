@@ -34,6 +34,7 @@ jobs:
           channel: C069396MYC9
           event: pass
           template: basic_success_1
+      - run: echo "Repo name within config << pipeline.trigger_parameters.github_app.repo_name >>"
       - inline-orb/my_command
  
 workflows:
