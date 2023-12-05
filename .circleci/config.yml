@@ -7,7 +7,7 @@ orbs:
       my_command:
         steps:
           - run: echo "Hello, world!"
-          - run: echo "Pipeline ID: << pipeline.id >>"
+          - run: echo "Pipeline ID << pipeline.id >>"
 
 jobs:
   build_and_test:
