@@ -7,12 +7,7 @@ orbs:
       my_command:
         steps:
           - run: echo "Hello, world!"
-    jobs:
-      my_job:
-        docker:
-          - image: cimg/node:20.10.0
-        steps:
-          - my_command
+          - run: echo "Pipeline ID: << pipeline.id >>"
 
 jobs:
   build_and_test:
